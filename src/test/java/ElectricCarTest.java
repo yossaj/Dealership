@@ -1,4 +1,5 @@
 import Behaviours.WarrantyDetail;
+import Cars.ElectricCar;
 import Cars.PetrolCar;
 import Components.Engine;
 import Components.Radio;
@@ -8,9 +9,9 @@ import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;
 
-public class PetrolCarTest {
+public class ElectricCarTest {
 
-    PetrolCar petrolCar;
+    ElectricCar electricCar;
     Engine engine;
     Radio radio;
     Tyres tyres;
@@ -20,29 +21,13 @@ public class PetrolCarTest {
         tyres = new Tyres("Firestone", "Rubber");
         radio = new Radio("Hiatchi", "Hitachi Holding Group", WarrantyDetail.GOLD);
         engine = new Engine("Big", "Thirty");
-        petrolCar = new PetrolCar(tyres, radio, engine, 5 ,400, 30000, "Black" );
+        electricCar = new ElectricCar(tyres, radio, engine, 5, 20000, 2000, "Silver", 210);
     }
 
     @Test
-    public void canHaveTyres(){
-        assertEquals(tyres, petrolCar.getTyres());
+    public void canGetNumOfDoors(){
+        assertEquals(5, electricCar.getDoors());
     }
-
-    @Test
-    public void canHaveRadio(){
-        assertEquals(radio, petrolCar.getRadio());
-    }
-
-    @Test
-    public void canHaveEngine(){
-        assertEquals(engine, petrolCar.getEngine());
-    }
-
-    @Test
-    public void canHaveDoors(){
-        assertEquals(4, petrolCar.getDoors());
-    }
-
 
 
 }
