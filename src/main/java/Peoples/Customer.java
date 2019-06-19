@@ -1,5 +1,7 @@
 package Peoples;
 
+import Cars.Vehicle;
+
 public class Customer extends Person {
 
     private double wallet;
@@ -18,5 +20,11 @@ public class Customer extends Person {
 
     public String getPreference() {
         return preference;
+    }
+
+    public void payForCar(Vehicle vehicle){
+        if(this.wallet > vehicle.getPrice()){
+            this.wallet -= vehicle.getPrice();
+        }
     }
 }
